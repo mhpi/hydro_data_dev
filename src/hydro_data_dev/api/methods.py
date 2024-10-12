@@ -4,11 +4,8 @@ from typing import Any
 
 from hydro_data_dev.core.record import Record
 
-__all__ = [
-    "record",
-    "save_record",
-    "load_record"
-]
+__all__ = ["record", "save_record", "load_record"]
+
 
 def record(**kwargs: Any) -> Record:
     """Creates a hydrologic data record
@@ -24,6 +21,7 @@ def record(**kwargs: Any) -> Record:
         The record object
     """
     return Record(**kwargs)
+
 
 def save_record(record: Record, path: Path) -> None:
     """Save a record to a file
