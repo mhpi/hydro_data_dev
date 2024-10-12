@@ -1,7 +1,17 @@
-from importlib.metadata import version
+from hydro_data_dev._version import version as __version__
+from hydro_data_dev.api.methods import (
+    record,
+    save_record,
+    load_record
+)
+from hydro_data_dev.core.record import Record
 
-from hydro_data_dev._registry.api import build
-from hydro_data_dev.Record import Record
+# in case setuptools scm screw up and find version to be 0.0.0
+assert not __version__.startswith("0.0.0")
 
-__version__ = version("hydro_data_dev")
-del version
+__all__ = [
+    "Record",
+    "record",
+    "save_record",
+    "load_record",
+]
