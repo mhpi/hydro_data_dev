@@ -1,6 +1,7 @@
 from datetime import datetime
 from enum import Enum
 from pathlib import Path
+from typing import Any
 
 from pydantic import BaseModel
 from pydantic.dataclasses import dataclass
@@ -16,6 +17,7 @@ class _bmi_unit_enum(str, Enum):
 
 class _format_enum(str, Enum):
     zarr = "zarr"
+    netcdf = "netcdf"
 
 
 class _mode_enum(str, Enum):
@@ -45,9 +47,9 @@ class Record(BaseModel):
     """A record containing information about a hydrological dataset"""
 
     meta: _metadata
+    data: Any
     start_time: datetime
     end_time: datetime
     format: _format_enum
-    mode: _mode_enum
     attributes: list[_attribute] | None
     forcings: list[_forcing] | None

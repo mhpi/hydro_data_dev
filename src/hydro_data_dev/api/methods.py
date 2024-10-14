@@ -2,12 +2,29 @@ import json
 from pathlib import Path
 from typing import Any
 
+import xarray as xr
+import zarr
+
 from hydro_data_dev.core.record import Record
 
 __all__ = ["record", "save_record", "load_record"]
 
+def record(data: xr.Dataset) -> Record:
+    """Creates a hydrologic data record
 
-def record(**kwargs: Any) -> Record:
+    Parameters
+    ----------
+    kwargs
+        Passed through to the :func:`Record` constructor
+
+    Returns
+    -------
+    Record
+        The record object
+    """
+    return Record(**kwargs)
+
+def record_from_dict(**kwargs: Any) -> Record:
     """Creates a hydrologic data record
 
     Parameters

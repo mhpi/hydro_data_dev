@@ -1,0 +1,1103 @@
+{
+    "metadata": {
+        ".zattrs": {
+            "coordinates": "station_ids",
+            "metadata": "{\"short_name\": \"CAMELS\", \"long_name\": \"Catchment Attributes and Meteorology for Large-sample Studies\", \"version\": \"1.2\", \"format\": \"txt\", \"spatial_coverage\": \"CONUS, 50.0\\u00b0 N to 25.0\\u00b0 N, 125.0\\u00b0 W to 66.0\\u00b0 W\", \"temporal_coverage\": \"1980-01-01 to 2014-12-31\", \"file_size\": \"13.56 GB Total\", \"data_resolution\": \"N/A\", \"spatial\": \"N/A\", \"temporal\": \"daily\", \"coordinate_reference_system\": \"N/A\", \"website\": \"https://ral.ucar.edu/solutions/products/camels\", \"citation\": \"Addor, N., Newman, A. J., Mizukami, N., & Clark, M. P. (2017). Catchment attributes for large-sample studies [Data set]. UCAR/NCAR. https://doi.org/10.5065/D6G73C3Q; Newman, A. J., Sampson, K., Clark, M. P., Bock, A., Viger, R. J., & Blodgett, D. (2014). A large-sample watershed-scale hydrometeorological dataset for the contiguous USA. Boulder. https://doi.org/10.5065/D6MW2F4D\", \"notes\": \"The CAMELS data includes 3 sub-datasets, NLDAS_extended, Daymet and Maurer_extended. It just has more maximum and minimum temperatures.We used Dapeng's code to extract the data. The code is available athydroDLFirst of all you need the CAMELS data set, to run any of your code. This data set can be downloaded for free here: CAMELS: Catchment Attributes and Meteorology for Large-sample Studies - Dataset Downloads Make sure to download the CAMELS time series meteorology, observed flow, meta data (.zip) file, as well as the CAMELS Attributes (.zip). Extract the data set on your file system and make sure to put the attribute folder (camels_attributes_v2.0) inside the CAMELS main directory. We trained our models with an updated version of the Maurer and NLDAS forcing data, that is still not published officially (CAMELS data set will be updated soon). The updated versions forcing contain daily minimum and maximum temperature. The original data included in the CAMELS data set only includes daily mean temperature. You can find the updated forcings temporarily here:Updated Maurer forcing with daily minimum and maximum temperature; Updated NLDAS forcing with daily minimum and maximum temperature. Download and extract the updated forcing into the basin_mean_forcing folder of the CAMELS data set and do not rename it (name should be maurer_extended and nldas_extended). Next you need the simulations of all benchmark models. These can be downloaded from HydroShare under the following link:\"}",
+            "static_variables": [
+                "p_mean",
+                "pet_mean",
+                "p_seasonality",
+                "frac_snow",
+                "aridity",
+                "high_prec_freq",
+                "high_prec_dur",
+                "low_prec_freq",
+                "low_prec_dur",
+                "elev_mean",
+                "slope_mean",
+                "area_gages2",
+                "frac_forest",
+                "lai_max",
+                "lai_diff",
+                "gvf_max",
+                "gvf_diff",
+                "dom_land_cover_frac",
+                "dom_land_cover",
+                "root_depth_50",
+                "soil_depth_pelletier",
+                "soil_depth_statsgo",
+                "soil_porosity",
+                "soil_conductivity",
+                "max_water_content",
+                "sand_frac",
+                "silt_frac",
+                "clay_frac",
+                "geol_1st_class",
+                "glim_1st_class_frac",
+                "geol_2nd_class",
+                "glim_2nd_class_frac",
+                "carbonate_rocks_frac",
+                "geol_porostiy",
+                "geol_permeability"
+            ],
+            "static_variables_units": [],
+            "time_series_variables": [
+                "dayl_nldas",
+                "prcp_nldas",
+                "srad_nldas",
+                "swe_nldas",
+                "tmax_nldas",
+                "tmin_nldas",
+                "vp_nldas",
+                "dayl_daymet",
+                "prcp_daymet",
+                "srad_daymet",
+                "swe_daymet",
+                "tmax_daymet",
+                "tmin_daymet",
+                "tmean_daymet",
+                "vp_daymet",
+                "runoff",
+                "runoff_basin_norm"
+            ],
+            "time_series_variables_units": [
+                "s",
+                "mm/day",
+                "W/m^2",
+                "mm",
+                "degC",
+                "degC",
+                "Pa",
+                "s",
+                "mm/day",
+                "W/m^2",
+                "mm",
+                "degC",
+                "degC",
+                "degC",
+                "Pa",
+                "ft3/s",
+                "1"
+            ]
+        },
+        ".zgroup": {
+            "zarr_format": 2
+        },
+        "area_gages2/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "area_gages2/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "aridity/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "aridity/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "carbonate_rocks_frac/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "carbonate_rocks_frac/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "clay_frac/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "clay_frac/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "dayl_daymet/.zarray": {
+            "chunks": [
+                12784
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                12784
+            ],
+            "zarr_format": 2
+        },
+        "dayl_daymet/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time"
+            ],
+            "coordinates": "lon lat",
+            "units": "s"
+        },
+        "dayl_nldas/.zarray": {
+            "chunks": [
+                12784
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                12784
+            ],
+            "zarr_format": 2
+        },
+        "dayl_nldas/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time"
+            ],
+            "coordinates": "lon lat",
+            "units": "s"
+        },
+        "dom_land_cover/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "dom_land_cover/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "dom_land_cover_frac/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "dom_land_cover_frac/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "elev_mean/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "elev_mean/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "frac_forest/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "frac_forest/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "frac_snow/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "frac_snow/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "geol_1st_class/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "geol_1st_class/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "geol_2nd_class/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "geol_2nd_class/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "geol_permeability/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "geol_permeability/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "geol_porostiy/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "geol_porostiy/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "glim_1st_class_frac/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "glim_1st_class_frac/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "glim_2nd_class_frac/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "glim_2nd_class_frac/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "gvf_diff/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "gvf_diff/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "gvf_max/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "gvf_max/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "high_prec_dur/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "high_prec_dur/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "high_prec_freq/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "high_prec_freq/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "lai_diff/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "lai_diff/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "lai_max/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "lai_max/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "lat/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "lat/.zattrs": {
+            "_ARRAY_DIMENSIONS": []
+        },
+        "lon/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "lon/.zattrs": {
+            "_ARRAY_DIMENSIONS": []
+        },
+        "low_prec_dur/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "low_prec_dur/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "low_prec_freq/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "low_prec_freq/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "max_water_content/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "max_water_content/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "p_mean/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "p_mean/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "p_seasonality/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "p_seasonality/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "pet_mean/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "pet_mean/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "prcp_daymet/.zarray": {
+            "chunks": [
+                12784
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                12784
+            ],
+            "zarr_format": 2
+        },
+        "prcp_daymet/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time"
+            ],
+            "coordinates": "lon lat",
+            "units": "mm/day"
+        },
+        "prcp_nldas/.zarray": {
+            "chunks": [
+                12784
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                12784
+            ],
+            "zarr_format": 2
+        },
+        "prcp_nldas/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time"
+            ],
+            "coordinates": "lon lat",
+            "units": "mm/day"
+        },
+        "root_depth_50/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "root_depth_50/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "runoff/.zarray": {
+            "chunks": [
+                12784
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                12784
+            ],
+            "zarr_format": 2
+        },
+        "runoff/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time"
+            ],
+            "coordinates": "lon lat",
+            "units": "ft3/s"
+        },
+        "runoff_basin_norm/.zarray": {
+            "chunks": [
+                12784
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                12784
+            ],
+            "zarr_format": 2
+        },
+        "runoff_basin_norm/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time"
+            ],
+            "coordinates": "lon lat",
+            "units": "1"
+        },
+        "sand_frac/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "sand_frac/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "silt_frac/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "silt_frac/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "slope_mean/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "slope_mean/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "soil_conductivity/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "soil_conductivity/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "soil_depth_pelletier/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "soil_depth_pelletier/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "soil_depth_statsgo/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "soil_depth_statsgo/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "soil_porosity/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "soil_porosity/.zattrs": {
+            "_ARRAY_DIMENSIONS": [],
+            "coordinates": "lon lat"
+        },
+        "srad_daymet/.zarray": {
+            "chunks": [
+                12784
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                12784
+            ],
+            "zarr_format": 2
+        },
+        "srad_daymet/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time"
+            ],
+            "coordinates": "lon lat",
+            "units": "W/m^2"
+        },
+        "srad_nldas/.zarray": {
+            "chunks": [
+                12784
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                12784
+            ],
+            "zarr_format": 2
+        },
+        "srad_nldas/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time"
+            ],
+            "coordinates": "lon lat",
+            "units": "W/m^2"
+        },
+        "station_ids/.zarray": {
+            "chunks": [],
+            "compressor": null,
+            "dtype": "<i8",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [],
+            "zarr_format": 2
+        },
+        "station_ids/.zattrs": {
+            "_ARRAY_DIMENSIONS": []
+        },
+        "swe_daymet/.zarray": {
+            "chunks": [
+                12784
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                12784
+            ],
+            "zarr_format": 2
+        },
+        "swe_daymet/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time"
+            ],
+            "coordinates": "lon lat",
+            "units": "mm"
+        },
+        "swe_nldas/.zarray": {
+            "chunks": [
+                12784
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                12784
+            ],
+            "zarr_format": 2
+        },
+        "swe_nldas/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time"
+            ],
+            "coordinates": "lon lat",
+            "units": "mm"
+        },
+        "time/.zarray": {
+            "chunks": [
+                12784
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<i8",
+            "fill_value": null,
+            "filters": null,
+            "order": "C",
+            "shape": [
+                12784
+            ],
+            "zarr_format": 2
+        },
+        "time/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time"
+            ],
+            "calendar": "proleptic_gregorian",
+            "units": "days since 1980-01-01"
+        },
+        "tmax_daymet/.zarray": {
+            "chunks": [
+                12784
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                12784
+            ],
+            "zarr_format": 2
+        },
+        "tmax_daymet/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time"
+            ],
+            "coordinates": "lon lat",
+            "units": "degC"
+        },
+        "tmax_nldas/.zarray": {
+            "chunks": [
+                12784
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                12784
+            ],
+            "zarr_format": 2
+        },
+        "tmax_nldas/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time"
+            ],
+            "coordinates": "lon lat",
+            "units": "degC"
+        },
+        "tmean_daymet/.zarray": {
+            "chunks": [
+                12784
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                12784
+            ],
+            "zarr_format": 2
+        },
+        "tmean_daymet/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time"
+            ],
+            "coordinates": "lon lat",
+            "units": "degC"
+        },
+        "tmin_daymet/.zarray": {
+            "chunks": [
+                12784
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                12784
+            ],
+            "zarr_format": 2
+        },
+        "tmin_daymet/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time"
+            ],
+            "coordinates": "lon lat",
+            "units": "degC"
+        },
+        "tmin_nldas/.zarray": {
+            "chunks": [
+                12784
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                12784
+            ],
+            "zarr_format": 2
+        },
+        "tmin_nldas/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time"
+            ],
+            "coordinates": "lon lat",
+            "units": "degC"
+        },
+        "vp_daymet/.zarray": {
+            "chunks": [
+                12784
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                12784
+            ],
+            "zarr_format": 2
+        },
+        "vp_daymet/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time"
+            ],
+            "coordinates": "lon lat",
+            "units": "Pa"
+        },
+        "vp_nldas/.zarray": {
+            "chunks": [
+                12784
+            ],
+            "compressor": {
+                "blocksize": 0,
+                "clevel": 5,
+                "cname": "lz4",
+                "id": "blosc",
+                "shuffle": 1
+            },
+            "dtype": "<f8",
+            "fill_value": "NaN",
+            "filters": null,
+            "order": "C",
+            "shape": [
+                12784
+            ],
+            "zarr_format": 2
+        },
+        "vp_nldas/.zattrs": {
+            "_ARRAY_DIMENSIONS": [
+                "time"
+            ],
+            "coordinates": "lon lat",
+            "units": "Pa"
+        }
+    },
+    "zarr_consolidated_format": 1
+}
