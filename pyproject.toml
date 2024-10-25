@@ -17,6 +17,8 @@ maintainers = [
 ]
 dependencies = [
     "scipy",
+    "icechunk",
+    "netcdf4",
     "numpy",
     "xarray",
     "zarr",
