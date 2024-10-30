@@ -15,6 +15,12 @@ cd hydro_data_dev
 pip install .
 ```
 
+### Developer Mode Installation
+The same clone as above, but use hatch's developer mode setting
+```shell
+pip install -e .
+```
+
 ### Maintainers:
 See Pyproject.toml for information
 
