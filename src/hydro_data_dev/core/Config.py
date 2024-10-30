@@ -1,6 +1,8 @@
+from pathlib import Path
+
 import yaml
 from pydantic import BaseModel, computed_field
-from pathlib import Path
+
 
 class Config(BaseModel):
     """

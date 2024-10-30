@@ -1,17 +1,17 @@
-from dotenv import load_dotenv
+from pathlib import Path
+
 import icechunk
 import xarray as xr
 import zarr
-from pathlib import Path
+from dotenv import load_dotenv
 
-load_dotenv()
+# load_dotenv()
 
 storage_config = icechunk.StorageConfig.s3_anonymous(
-    bucket="hydro-data-dev",
+    bucket="mhpi-spatial",
     prefix="camels",
     region=None,
     endpoint_url=None,
-    # endpoint_url="https://s3.us-east-2.amazonaws.com"
 )
 
 store = icechunk.IcechunkStore.open_existing(
@@ -20,7 +20,7 @@ store = icechunk.IcechunkStore.open_existing(
 )
 
 # storage_config = icechunk.StorageConfig.s3_from_env(
-#     bucket="hydro-data-dev",
+#     bucket="mhpi-spatial",
 #     prefix="camels",
 # )
 # try:
@@ -28,8 +28,8 @@ store = icechunk.IcechunkStore.open_existing(
 #     storage=storage_config,
 #     mode="r",
 # )
-# except ValueError:
-#     store = icechunk.IcechunkStore.create(storage_config)
+# # except ValueError:
+# store = icechunk.IcechunkStore.create(storage_config)
 
 
 # data_path = Path("/projects/mhpi/jql6620/format_data/26.pretrain_data_processing/01.insitu_and_basin_average/02.CAMELS/CAMELS_Dapeng.nc")

@@ -35,6 +35,18 @@ test = [
     "pytest-cov",
 ]
 
+jupyter = [
+    "ipykernel",
+    "jupyterlab"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+xfail_strict = true
+addopts = [
+    "--import-mode=importlib",  # allow using test files with same name
+]
+
 [tool.hatch]
 version.source = "vcs"
 build.hooks.vcs.version-file = "src/hydro_data_dev/_version.py"
