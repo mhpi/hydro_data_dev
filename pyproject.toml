@@ -17,6 +17,8 @@ maintainers = [
 ]
 dependencies = [
     "scipy",
+    "icechunk",
+    "netcdf4",
     "numpy",
     "xarray",
     "zarr",
@@ -31,6 +33,18 @@ dynamic = ["version"]  # Add this line to indicate dynamic versioning
 test = [
     "pytest",
     "pytest-cov",
+]
+
+jupyter = [
+    "ipykernel",
+    "jupyterlab"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+xfail_strict = true
+addopts = [
+    "--import-mode=importlib",  # allow using test files with same name
 ]
 
 [tool.hatch]
