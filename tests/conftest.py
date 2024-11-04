@@ -1,23 +1,11 @@
 from pathlib import Path
-from typing import Any
 
 import pytest
-import xarray as xr
 
-current_dir = Path.cwd()
+import hydro_data_dev as hdd
 
 
 @pytest.fixture
-def sample_json() -> dict[str, Any]:
-    record = {
-        "meta": {
-            "name": "sample_camels",
-            "root": (current_dir / "sample_data/sample_camels.nc").__str__(),
-            "version": "v1.0.0",
-        },
-        "data": xr.open_dataset(current_dir / "sample_data/sample_camels.nc", engine="netcdf4"),
-        "start_time": "1980-01-01T00:00:00.000000000",
-        "end_time": "2014-12-31T00:00:00.000000000",
-        "format": "netcdf",
-    }
-    return record
+def sample_record() -> hdd.Record:
+    path = Path(__file__).parent / "data" / "example_record.yaml"
+    return hdd.create_record(record=path)
