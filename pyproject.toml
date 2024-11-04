@@ -21,7 +21,6 @@ dependencies = [
     "netcdf4",
     "numpy",
     "xarray",
-    "zarr",
     "pandas",
     "geopandas",
     "pydantic>=2.0",

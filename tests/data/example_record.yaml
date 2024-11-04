@@ -1,0 +1,33 @@
+# config.yaml
+bucket: "mhpi-spatial"
+dataset: "camels"
+
+# Date ranges for train/val/test splits
+train_date_range: 
+  - "1999-10-01"
+  - "2008-09-30"
+val_date_range:
+  - "2008-10-01"
+  - "2014-09-30"
+test_date_range:
+  - "1989-10-01"
+  - "1999-09-30"
+
+# Variables to use in the model
+time_series_variables:
+  - dayl_daymet
+  - prcp_daymet
+  - srad_daymet
+  - tmean_daymet
+  - vp_daymet
+
+target_variables:
+  - runoff
+
+static_variables:
+  - p_mean
+
+station_ids: ./tests/data/sample_basins.txt
+add_coords: false
+group_mask_dict: null
+data_type: basin

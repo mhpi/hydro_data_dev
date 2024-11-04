@@ -1,15 +1,15 @@
 # config.yaml
-bucket: "hydro-data-dev"
+bucket: "mhpi-spatial"
 dataset: "camels"
 
 # Date ranges for train/val/test splits
-train_date_list: 
+train_date_range: 
   - "1999-10-01"
   - "2008-09-30"
-val_date_list:
+val_date_range:
   - "2008-10-01"
   - "2014-09-30"
-test_date_list:
+test_date_range:
   - "1989-10-01"
   - "1999-09-30"
 
