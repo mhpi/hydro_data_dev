@@ -1,4 +1,5 @@
 # Hydro Data (Dev)
+[![Tests](https://github.com/mhpi/hydro_data_dev/actions/workflows/pytest.yml/badge.svg)](https://github.com/hydro_data_dev/actions/actions/workflows/tests.yml)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11-blue)]()
 
